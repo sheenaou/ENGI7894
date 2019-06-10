@@ -1,29 +1,51 @@
 from queue import Queue
 from simpy import RealtimeEnvironment
 from random import randint
-from threading import Lock, Thread
+from threading import Lock, Thread, active_count
+import sys
 
-speed = 1 / 60
+speed = 1 / 3600
 
 
 class DriveThrough:
-    def __init__(self):
-        self.customers = CustomerQueue()
+    def __init__(self, time):
+        self.length = time
+        self.clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
+        self.customers = CustomerQueue(time)
         self.payment = Payment()
         self.window0 = Window(id="Jane", payment=self.payment)
         self.window1 = Window(id="John", payment=self.payment)
         self.monitor = Monitor(window0=self.window0, window1=self.window1, people=self.customers)
-        people = Thread(target=self.customers.generate_customers, name="people", daemon=True)
-        crew0 = Thread(target=self.window0.serve_queue, name="John", daemon=True)
-        crew1 = Thread(target=self.window1.serve_queue, name="Jane", daemon=True)
-        monitor = Thread(target=self.monitor.move_people, name="Monitor", daemon=True)
+        people = Thread(target=self.customers.generate_customers, name="people")
+        crew0 = Thread(target=self.window0.serve_queue, name="John")
+        crew1 = Thread(target=self.window1.serve_queue, name="Jane")
+        monitor = Thread(target=self.monitor.move_people, name="Monitor")
         self.threads = [people, crew0, crew1, monitor]
-        self.clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
+        self.objects = [self.window0, self.window1, self.monitor]
+
 
     def start(self):
         for thread in self.threads:
             thread.start()
-        self.clock.run(until=14400)
+        self.clock.run(until=self.length)
+
+        for thread in self.objects:
+            thread.change_status()
+
+        while not self.customers.customer_queue:
+            pass
+        self.clock.run(until=self.length + 1000) #let each thread finish before collecting stats
+        time_sum = 0
+        complete = 0
+        for customer in self.customers.history:
+            if customer.complete:
+                time_sum = time_sum + customer.finish_time - customer.arrival_time
+                complete = complete + 1
+
+        print("\n************************************\n"
+              "Total Customer Arrived: {}\n"
+              "Total Customer Served: {}\n"
+              "Average time to serve: {}\n".format(len(self.customers.history), complete, time_sum//complete))
 
 
 class Customer:
@@ -46,7 +68,6 @@ class Customer:
             (-1) - Put into window queue after waiting
         """
         self.actions = self.actions + value
-        # self.wait_time = self.wait_time + time
 
     def queue_action(self):
         self.actions = -1
@@ -57,23 +78,28 @@ class Customer:
         else:
             return False
 
+    def add_time(self, time):
+        self.wait_time = self.wait_time + time
+
     def finished(self, time):
-        self.finish_time = self.arrival_time + time
+        self.finish_time = self.arrival_time + self.wait_time + time
         self.complete = True
 
 
 class CustomerQueue:
-    def __init__(self):
+    def __init__(self, duration):
         self.history = []
         self.customer_queue = []
         self.customer_count = 0
         self.queue_lock = Lock()
         self.clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
+        self.duration = duration
+        self.status = True
 
     def generate_customers(self):
         """This function will generate a Customer object every 50-100 seconds"""
         arrive_time = randint(50, 100)
-        while True:
+        while self.status:
             self.clock.run(until=arrive_time)
             c = Customer(id=self.customer_count, time=arrive_time)
             # print("Customer {} has been created".format(c.id))
@@ -86,12 +112,16 @@ class CustomerQueue:
             self.customer_count = self.customer_count + 1
             arrive_time = arrive_time + randint(50, 100)
 
+    def change_status(self):
+        self.status = False
+
 
 class Monitor:
     def __init__(self, window0, window1, people):
         self.window0 = window0
         self.window1 = window1
         self.people = people
+        self.status = True
 
     def move_people(self):
         """This function will place customers into a window queue if space is available"""
@@ -101,7 +131,7 @@ class Monitor:
         window1 = self.window1.queue
         queue_message = "Customer {} has been put into {}'s queue"
 
-        while True:
+        while self.status:
             if len(people) is not 0:
                 queue_message = "Customer {} has been put into {}'s queue"
                 # CASE: Both window queues are full
@@ -116,6 +146,7 @@ class Monitor:
                             clock.run(until=i)
                             if not (window0.full and window1.full):
                                 customer.queue_action()
+                                customer.add_time(i)
                                 if window0.qsize() < window1.qsize():
                                     window0.put(customer)
                                     print(queue_message.format(customer.id, self.window0.id))
@@ -125,7 +156,8 @@ class Monitor:
                         if not customer.in_window():
                             # leave and put them back into the queue
                             print("Customer {} has left and will try again later".format(customer.id))
-                            customer.action() # Leaving the line
+                            customer.action()   # Leaving the line
+                            customer.add_time(600)
                             clock.run(until=620)
                             people_lock.acquire()
                             people.append(customer)
@@ -139,8 +171,9 @@ class Monitor:
                             people_lock.acquire()
                             if not customer.in_window():
                                 customer.action() # Leaving Permanently
+                                customer.add_time(40)
                                 people.remove(customer)
-                                print("Customer {} has left permanently******************".format(customer.id))
+                                print("Customer {} has left permanently".format(customer.id))
                             people_lock.release()
 
                     # Get a Customer
@@ -152,7 +185,7 @@ class Monitor:
                             people_lock.release()
 
                             # Execute waiting sequence
-                            waiting = Thread(target=waiting, daemon=True, args=(customer,))
+                            waiting = Thread(target=waiting, args=(customer,))
                             waiting.start()
                             clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
                             clock.run(until=20)
@@ -173,16 +206,21 @@ class Monitor:
                         window1.put(customer)
                         print(queue_message.format(customer.id, self.window1.id))
 
+    def change_status(self):
+        self.status = False
+
+
 class Window:
     def __init__(self, id, payment):
         self.id = id
         self.queue = Queue(maxsize=3)
         self.clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
         self.payment_queue = payment
+        self.status = True
 
     def serve_queue(self):
         serve_time = 0
-        while True:
+        while self.status:
             if not self.queue.empty():
                 time = randint(300, 600)
                 serve_time = serve_time + time
@@ -191,6 +229,9 @@ class Window:
                 print("Customer {} has finished being served".format(c.id))
                 c.finished(time)
                 self.payment_queue.complete(c)
+
+    def change_status(self):
+        self.status = False
 
 
 class Payment:
@@ -205,8 +246,12 @@ class Payment:
 
 
 def main():
-    d = DriveThrough()
-    d.start()
+    if len(sys.argv) == 0:
+        print("INVALID FORMAT -- usage: DriveThrough.py <simulation_duration>")
+    else:
+        duration = int(sys.argv[1]) * 60  #convert to seconds
+        d = DriveThrough(duration)
+        d.start()
 
 
 main()
