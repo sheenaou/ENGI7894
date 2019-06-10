@@ -35,17 +35,27 @@ class Customer:
         self.actions = 0
         self.complete = False
 
-    def actions(self):
+    def action(self, value=1):
         """ This function will increment for every action taken for a customer
-            1 - Attempting to put into a queue
-            2 - Waiting for a queue to open
-            3 - Leaving the queue
-            4 - Rejoining the queue
-            5 - Leaving the queue permanently
+            0 - No actions have happened
+            1 - Attempting to put into a window queue
+            2 - Waiting for a window queue to open
+            3 - Leaving the line
+            4 - Rejoining the line
+            5 - Leaving the line permanently
+            (-1) - Put into window queue after waiting
         """
-        self.actions = self.attempted + 1
+        self.actions = self.actions + value
         # self.wait_time = self.wait_time + time
 
+    def queue_action(self):
+        self.actions = -1
+
+    def in_window(self):
+        if self.actions == -1:
+            return True
+        else:
+            return False
 
     def finished(self, time):
         self.finish_time = self.arrival_time + time
@@ -88,7 +98,7 @@ class Monitor:
         people = self.people.customer_queue
         people_lock = self.people.queue_lock
         window0 = self.window0.queue
-        window1 = self.window0.queue
+        window1 = self.window1.queue
         queue_message = "Customer {} has been put into {}'s queue"
 
         while True:
@@ -96,23 +106,65 @@ class Monitor:
                 queue_message = "Customer {} has been put into {}'s queue"
                 # CASE: Both window queues are full
                 if window0.full() and window1.full():
-                    # Waiting function for thread to execute
-                    def waiting():
-                        pass
+
+                    def waiting(customer):
+                        """This is the waiting sequence for a customer who cannot be put into a queue right away"""
+                        clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
+                        customer.action()  # Waiting for queue to open
+                        # Try to get into a queue every seconds
+                        for i in range(1, 20):
+                            clock.run(until=i)
+                            if not (window0.full and window1.full):
+                                customer.queue_action()
+                                if window0.qsize() < window1.qsize():
+                                    window0.put(customer)
+                                    print(queue_message.format(customer.id, self.window0.id))
+                                else:
+                                    window1.put(customer)
+                                    print(queue_message.format(customer.id, self.window1.id))
+                        if not customer.in_window():
+                            # leave and put them back into the queue
+                            print("Customer {} has left and will try again later".format(customer.id))
+                            customer.action() # Leaving the line
+                            clock.run(until=620)
+                            people_lock.acquire()
+                            people.append(customer)
+
+                            customer.action() # Rejoining the line
+                            people_lock.release()
+                            print("Customer {} had rejoined the waiting list".format(customer.id))
+
+                            # Leave permanently
+                            clock.run(until=660)
+                            people_lock.acquire()
+                            if not customer.in_window():
+                                customer.action() # Leaving Permanently
+                                people.remove(customer)
+                                print("Customer {} has left permanently******************".format(customer.id))
+                            people_lock.release()
 
                     # Get a Customer
-                    people_lock.aquire()
-                    customer = people.pop(0)
-                    customer.actions()
-                    # print(queue_message.format(customer.id, self.window0.id))
-                    people_lock.release()
+                    people_lock.acquire()
+                    if people:
+                        if people[0].in_window() is False and people[0].actions == 0:
+                            customer = people.pop(0)
+                            customer.action()
+                            people_lock.release()
 
-                    #
+                            # Execute waiting sequence
+                            waiting = Thread(target=waiting, daemon=True, args=(customer,))
+                            waiting.start()
+                            clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
+                            clock.run(until=20)
+                        else:
+                            people_lock.release()
+                    else:
+                        people_lock.release()
 
                 else:
-                    people_lock.aquire()
+                    people_lock.acquire()
                     customer = people.pop(0)
-                    customer.actions()
+                    customer.queue_action()
                     people_lock.release()
                     if window0.qsize() < window1.qsize():
                         window0.put(customer)
@@ -120,10 +172,6 @@ class Monitor:
                     else:
                         window1.put(customer)
                         print(queue_message.format(customer.id, self.window1.id))
-
-
-
-
 
 class Window:
     def __init__(self, id, payment):
@@ -163,68 +211,3 @@ def main():
 
 main()
 
-queue_message = "Customer {} has been put into {}'s queue"
-# CASE: Both window queues are full
-if self.window0.queue.full() and self.window1.queue.full():
-    # Waiting function for thread to execute
-    def waiting():
-        clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
-        # Try to get into a queue every second
-        for i in range(1, 21):
-            clock.run(until=i)
-            full = self.window0.queue.full and self.window1.queue.full
-            if not full:
-                if len(self.window0.queue) < len(self.window1.queue):
-                    self.window0.queue.put(customer)
-                    customer.action()
-                    print(queue_message.format(customer.id, self.window0.id))
-                else:
-                    self.window1.queue.put(customer)
-                    customer.action()
-                    print(queue_message.format(customer.id, self.window1.id))
-        if not customer.attempted:
-            print("Customer {} has left and will try again".format(customer.id))
-            clock.run(until=621)
-            self.people.queue_lock.acquire()
-            self.people.customer_queue.append(customer)
-            self.people.queue_lock.release()
-            print("Customer {} has rejoined the waiting list".format(customer.id))
-
-            clock.run(until=661)
-            self.people.queue_lock.acquire()
-            if not customer.attempted:
-                customer.action()
-                self.people.customer_queue.remove(customer)
-            self.people.queue_lock.release()
-            print("Customer {} has left".format(customer.id))
-
-
-    # Get a Customer
-    self.people.queue_lock.acquire()
-    customer = self.people.customer_queue.pop(0)
-    self.people.queue_lock.release()
-    print("Customer {} arrived at: {}".format(customer.id, customer.arrival_time))
-
-    # Execute waiting sequence
-    waiting = Thread(target=waiting, daemon=True)
-    waiting.start()
-    clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
-    clock.run(until=20)
-
-elif self.window0.queue.qsize() < self.window1.queue.qsize():
-    # Get a Customer
-    self.people.queue_lock.acquire()
-    customer = self.people.customer_queue.pop(0)
-    customer.action()
-    self.people.queue_lock.release()
-    self.window0.queue.put(customer)
-
-    print(queue_message.format(customer.id, self.window0.id))
-else:
-    # Get a Customer
-    self.people.queue_lock.acquire()
-    customer = self.people.customer_queue.pop(0)
-    customer.action()
-    self.people.queue_lock.release()
-    self.window1.queue.put(customer)
-    print(queue_message.format(customer.id, self.window1.id))
