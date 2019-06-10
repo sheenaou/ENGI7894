@@ -1,0 +1,512 @@
+Customer 0 has been put into John's queue
+Customer 1 has been put into Jane's queue
+Customer 2 has been put into John's queue
+Customer 3 has been put into Jane's queue
+Customer 4 has been put into John's queue
+Customer 5 has been put into Jane's queue
+Customer 6 has left and will try again later
+Customer 0 has finished being served
+Customer 7 has been put into John's queue
+Customer 1 has finished being served
+Customer 8 has been put into Jane's queue
+Customer 9 has left and will try again later
+Customer 10 has left and will try again later
+Customer 2 has finished being served
+Customer 12 has been put into John's queue
+Customer 11 has left and will try again later
+Customer 13 has left and will try again later
+Customer 6 had rejoined the waiting list
+Customer 6 has left permanently
+Customer 3 has finished being served
+Customer 15 has been put into Jane's queue
+Customer 14 has left and will try again later
+Customer 16 has left and will try again later
+Customer 17 has left and will try again later
+Customer 9 had rejoined the waiting list
+Customer 9 has left permanently
+Customer 4 has finished being served
+Customer 19 has been put into John's queue
+Customer 18 has left and will try again later
+Customer 11 had rejoined the waiting list
+Customer 11 has left permanently
+Customer 10 had rejoined the waiting list
+Customer 10 has left permanently
+Customer 5 has finished being served
+Customer 20 has left and will try again later
+Customer 13 had rejoined the waiting list
+Customer 13 has left permanently
+Customer 21 has been put into Jane's queue
+Customer 22 has left and will try again later
+Customer 14 had rejoined the waiting list
+Customer 14 has left permanently
+Customer 23 has left and will try again later
+Customer 16 had rejoined the waiting list
+Customer 16 has left permanently
+Customer 24 has left and will try again later
+Customer 17 had rejoined the waiting list
+Customer 17 has left permanently
+Customer 7 has finished being served
+Customer 18 had rejoined the waiting list
+Customer 18 has left permanently
+Customer 8 has finished being served
+Customer 20 had rejoined the waiting list
+Customer 20 has left permanently
+Customer 25 has been put into John's queue
+Customer 26 has been put into Jane's queue
+Customer 12 has finished being served
+Customer 27 has left and will try again later
+Customer 28 has been put into John's queue
+Customer 22 had rejoined the waiting list
+Customer 22 has left permanently
+Customer 29 has left and will try again later
+Customer 23 had rejoined the waiting list
+Customer 23 has left permanently
+Customer 30 has left and will try again later
+Customer 31 has left and will try again later
+Customer 24 had rejoined the waiting list
+Customer 24 has left permanently
+Customer 15 has finished being served
+Customer 32 has been put into Jane's queue
+Customer 19 has finished being served
+Customer 33 has left and will try again later
+Customer 34 has been put into John's queue
+Customer 35 has left and will try again later
+Customer 36 has left and will try again later
+Customer 37 has left and will try again later
+Customer 25 has finished being served
+Customer 21 has finished being served
+Customer 38 has been put into John's queue
+Customer 39 has been put into Jane's queue
+Customer 27 had rejoined the waiting list
+Customer 27 has left permanently
+Customer 29 had rejoined the waiting list
+Customer 29 has left permanently
+Customer 30 had rejoined the waiting list
+Customer 30 has left permanently
+Customer 31 had rejoined the waiting list
+Customer 31 has left permanently
+Customer 40 has left and will try again later
+Customer 33 had rejoined the waiting list
+Customer 33 has left permanently
+Customer 41 has left and will try again later
+Customer 35 had rejoined the waiting list
+Customer 35 has left permanently
+Customer 42 has left and will try again later
+Customer 43 has left and will try again later
+Customer 44 has left and will try again later
+Customer 28 has finished being served
+Customer 45 has left and will try again later
+Customer 26 has finished being served
+Customer 46 has been put into John's queue
+Customer 47 has been put into Jane's queue
+Customer 36 had rejoined the waiting list
+Customer 36 has left permanently
+Customer 37 had rejoined the waiting list
+Customer 37 has left permanently
+Customer 48 has left and will try again later
+Customer 40 had rejoined the waiting list
+Customer 40 has left permanently
+Customer 49 has left and will try again later
+Customer 50 has left and will try again later
+Customer 32 has finished being served
+Customer 51 has left and will try again later
+Customer 52 has been put into Jane's queue
+Customer 41 had rejoined the waiting list
+Customer 41 has left permanently
+Customer 42 had rejoined the waiting list
+Customer 42 has left permanently
+Customer 34 has finished being served
+Customer 53 has been put into John's queue
+Customer 43 had rejoined the waiting list
+Customer 43 has left permanently
+Customer 44 had rejoined the waiting list
+Customer 44 has left permanently
+Customer 45 had rejoined the waiting list
+Customer 45 has left permanently
+Customer 54 has left and will try again later
+Customer 55 has left and will try again later
+Customer 48 had rejoined the waiting list
+Customer 48 has left permanently
+Customer 39 has finished being served
+Customer 56 has left and will try again later
+Customer 49 had rejoined the waiting list
+Customer 49 has left permanently
+Customer 58 has been put into Jane's queue
+Customer 38 has finished being served
+Customer 50 had rejoined the waiting list
+Customer 50 has left permanently
+Customer 57 has left and will try again later
+Customer 59 has left and will try again later
+Customer 51 had rejoined the waiting list
+Customer 51 has left permanently
+Customer 60 has been put into John's queue
+Customer 61 has left and will try again later
+Customer 62 has left and will try again later
+Customer 47 has finished being served
+Customer 63 has left and will try again later
+Customer 64 has been put into Jane's queue
+Customer 46 has finished being served
+Customer 54 had rejoined the waiting list
+Customer 54 has left permanently
+Customer 65 has left and will try again later
+Customer 66 has been put into John's queue
+Customer 56 had rejoined the waiting list
+Customer 56 has left permanently
+Customer 55 had rejoined the waiting list
+Customer 55 has left permanently
+Customer 67 has left and will try again later
+Customer 57 had rejoined the waiting list
+Customer 57 has left permanently
+Customer 68 has left and will try again later
+Customer 59 had rejoined the waiting list
+Customer 59 has left permanently
+Customer 69 has left and will try again later
+Customer 52 has finished being served
+Customer 70 has left and will try again later
+Customer 61 had rejoined the waiting list
+Customer 72 has been put into Jane's queue
+Customer 62 had rejoined the waiting list
+Customer 62 has left permanently
+Customer 71 has left and will try again later
+Customer 61 has left permanently
+Customer 73 has left and will try again later
+Customer 63 had rejoined the waiting list
+Customer 63 has left permanently
+Customer 53 has finished being served
+Customer 65 had rejoined the waiting list
+Customer 65 has left permanently
+Customer 74 has been put into John's queue
+Customer 75 has left and will try again later
+Customer 67 had rejoined the waiting list
+Customer 67 has left permanently
+Customer 76 has left and will try again later
+Customer 68 had rejoined the waiting list
+Customer 68 has left permanently
+Customer 77 has left and will try again later
+Customer 58 has finished being served
+Customer 78 has left and will try again later
+Customer 69 had rejoined the waiting list
+Customer 69 has left permanently
+Customer 79 has been put into Jane's queue
+Customer 60 has finished being served
+Customer 70 had rejoined the waiting list
+Customer 70 has left permanently
+Customer 80 has been put into John's queue
+Customer 81 has left and will try again later
+Customer 71 had rejoined the waiting list
+Customer 71 has left permanently
+Customer 82 has left and will try again later
+Customer 73 had rejoined the waiting list
+Customer 73 has left permanently
+Customer 64 has finished being served
+Customer 84 has been put into Jane's queue
+Customer 83 has left and will try again later
+Customer 76 had rejoined the waiting list
+Customer 76 has left permanently
+Customer 66 has finished being served
+Customer 75 had rejoined the waiting list
+Customer 75 has left permanently
+Customer 85 has been put into John's queue
+Customer 86 has left and will try again later
+Customer 77 had rejoined the waiting list
+Customer 77 has left permanently
+Customer 78 had rejoined the waiting list
+Customer 78 has left permanently
+Customer 87 has left and will try again later
+Customer 88 has left and will try again later
+Customer 72 has finished being served
+Customer 89 has been put into Jane's queue
+Customer 81 had rejoined the waiting list
+Customer 81 has left permanently
+Customer 82 had rejoined the waiting list
+Customer 82 has left permanently
+Customer 90 has left and will try again later
+Customer 74 has finished being served
+Customer 91 has left and will try again later
+Customer 83 had rejoined the waiting list
+Customer 83 has left permanently
+Customer 92 has been put into John's queue
+Customer 86 had rejoined the waiting list
+Customer 86 has left permanently
+Customer 93 has left and will try again later
+Customer 94 has left and will try again later
+Customer 79 has finished being served
+Customer 87 had rejoined the waiting list
+Customer 87 has left permanently
+Customer 95 has left and will try again later
+Customer 96 has been put into Jane's queue
+Customer 88 had rejoined the waiting list
+Customer 88 has left permanently
+Customer 97 has left and will try again later
+Customer 80 has finished being served
+Customer 98 has left and will try again later
+Customer 90 had rejoined the waiting list
+Customer 90 has left permanently
+Customer 99 has been put into John's queue
+Customer 91 had rejoined the waiting list
+Customer 91 has left permanently
+Customer 100 has left and will try again later
+Customer 84 has finished being served
+Customer 93 had rejoined the waiting list
+Customer 93 has left permanently
+Customer 102 has been put into Jane's queue
+Customer 94 had rejoined the waiting list
+Customer 94 has left permanently
+Customer 95 had rejoined the waiting list
+Customer 95 has left permanently
+Customer 101 has left and will try again later
+Customer 103 has left and will try again later
+Customer 85 has finished being served
+Customer 104 has left and will try again later
+Customer 105 has been put into John's queue
+Customer 98 had rejoined the waiting list
+Customer 98 has left permanently
+Customer 97 had rejoined the waiting list
+Customer 97 has left permanently
+Customer 106 has left and will try again later
+Customer 107 has left and will try again later
+Customer 89 has finished being served
+Customer 108 has been put into Jane's queue
+Customer 100 had rejoined the waiting list
+Customer 100 has left permanently
+Customer 109 has left and will try again later
+Customer 92 has finished being served
+Customer 101 had rejoined the waiting list
+Customer 101 has left permanently
+Customer 110 has been put into John's queue
+Customer 111 has left and will try again later
+Customer 103 had rejoined the waiting list
+Customer 103 has left permanently
+Customer 112 has left and will try again later
+Customer 104 had rejoined the waiting list
+Customer 104 has left permanently
+Customer 113 has left and will try again later
+Customer 96 has finished being served
+Customer 107 had rejoined the waiting list
+Customer 107 has left permanently
+Customer 99 has finished being served
+Customer 109 had rejoined the waiting list
+Customer 109 has left permanently
+Customer 114 has been put into John's queue
+Customer 115 has been put into Jane's queue
+Customer 106 had rejoined the waiting list
+Customer 106 has left permanently
+Customer 116 has left and will try again later
+Customer 117 has left and will try again later
+Customer 105 has finished being served
+Customer 118 has been put into John's queue
+Customer 112 had rejoined the waiting list
+Customer 112 has left permanently
+Customer 119 has left and will try again later
+Customer 113 had rejoined the waiting list
+Customer 113 has left permanently
+Customer 111 had rejoined the waiting list
+Customer 111 has left permanently
+Customer 102 has finished being served
+Customer 110 has finished being served
+Customer 120 has been put into John's queue
+Customer 121 has been put into Jane's queue
+Customer 116 had rejoined the waiting list
+Customer 116 has left permanently
+Customer 122 has left and will try again later
+Customer 117 had rejoined the waiting list
+Customer 117 has left permanently
+Customer 123 has left and will try again later
+Customer 124 has left and will try again later
+Customer 125 has left and will try again later
+Customer 108 has finished being served
+Customer 126 has been put into Jane's queue
+Customer 119 had rejoined the waiting list
+Customer 119 has left permanently
+Customer 127 has left and will try again later
+Customer 128 has left and will try again later
+Customer 114 has finished being served
+Customer 130 has been put into John's queue
+Customer 129 has left and will try again later
+Customer 131 has left and will try again later
+Customer 132 has left and will try again later
+Customer 122 had rejoined the waiting list
+Customer 122 has left permanently
+Customer 115 has finished being served
+Customer 133 has been put into Jane's queue
+Customer 123 had rejoined the waiting list
+Customer 123 has left permanently
+Customer 124 had rejoined the waiting list
+Customer 124 has left permanently
+Customer 125 had rejoined the waiting list
+Customer 125 has left permanently
+Customer 134 has left and will try again later
+Customer 127 had rejoined the waiting list
+Customer 127 has left permanently
+Customer 118 has finished being served
+Customer 135 has left and will try again later
+Customer 136 has left and will try again later
+Customer 137 has been put into John's queue
+Customer 121 has finished being served
+Customer 128 had rejoined the waiting list
+Customer 128 has left permanently
+Customer 139 has been put into Jane's queue
+Customer 129 had rejoined the waiting list
+Customer 129 has left permanently
+Customer 131 had rejoined the waiting list
+Customer 131 has left permanently
+Customer 138 has left and will try again later
+Customer 140 has left and will try again later
+Customer 132 had rejoined the waiting list
+Customer 132 has left permanently
+Customer 141 has left and will try again later
+Customer 142 has left and will try again later
+Customer 134 had rejoined the waiting list
+Customer 134 has left permanently
+Customer 135 had rejoined the waiting list
+Customer 135 has left permanently
+Customer 120 has finished being served
+Customer 136 had rejoined the waiting list
+Customer 136 has left permanently
+Customer 144 has been put into John's queue
+Customer 143 has left and will try again later
+Customer 145 has left and will try again later
+Customer 146 has left and will try again later
+Customer 126 has finished being served
+Customer 138 had rejoined the waiting list
+Customer 138 has left permanently
+Customer 147 has been put into Jane's queue
+Customer 148 has left and will try again later
+Customer 130 has finished being served
+Customer 149 has been put into John's queue
+Customer 140 had rejoined the waiting list
+Customer 140 has left permanently
+Customer 141 had rejoined the waiting list
+Customer 141 has left permanently
+Customer 142 had rejoined the waiting list
+Customer 142 has left permanently
+Customer 150 has left and will try again later
+Customer 151 has left and will try again later
+Customer 152 has left and will try again later
+Customer 133 has finished being served
+Customer 143 had rejoined the waiting list
+Customer 143 has left permanently
+Customer 137 has finished being served
+Customer 153 has been put into John's queue
+Customer 154 has been put into Jane's queue
+Customer 146 had rejoined the waiting list
+Customer 146 has left permanently
+Customer 145 had rejoined the waiting list
+Customer 145 has left permanently
+Customer 155 has left and will try again later
+Customer 148 had rejoined the waiting list
+Customer 148 has left permanently
+Customer 156 has left and will try again later
+Customer 157 has left and will try again later
+Customer 158 has left and will try again later
+Customer 144 has finished being served
+Customer 150 had rejoined the waiting list
+Customer 150 has left permanently
+Customer 159 has been put into John's queue
+Customer 151 had rejoined the waiting list
+Customer 151 has left permanently
+Customer 139 has finished being served
+Customer 160 has been put into Jane's queue
+Customer 152 had rejoined the waiting list
+Customer 152 has left permanently
+Customer 161 has left and will try again later
+Customer 162 has left and will try again later
+Customer 163 has left and will try again later
+Customer 164 has left and will try again later
+Customer 156 had rejoined the waiting list
+Customer 156 has left permanently
+Customer 149 has finished being served
+Customer 157 had rejoined the waiting list
+Customer 157 has left permanently
+Customer 165 has been put into John's queue
+Customer 147 has finished being served
+Customer 155 had rejoined the waiting list
+Customer 155 has left permanently
+Customer 158 had rejoined the waiting list
+Customer 158 has left permanently
+Customer 166 has left and will try again later
+Customer 167 has been put into Jane's queue
+Customer 168 has left and will try again later
+Customer 169 has left and will try again later
+Customer 153 has finished being served
+Customer 170 has been put into John's queue
+Customer 161 had rejoined the waiting list
+Customer 161 has left permanently
+Customer 154 has finished being served
+Customer 162 had rejoined the waiting list
+Customer 162 has left permanently
+Customer 171 has left and will try again later
+Customer 163 had rejoined the waiting list
+Customer 163 has left permanently
+Customer 172 has been put into Jane's queue
+Customer 164 had rejoined the waiting list
+Customer 164 has left permanently
+Customer 173 has left and will try again later
+Customer 159 has finished being served
+Customer 174 has been put into John's queue
+Customer 160 has finished being served
+Customer 175 has left and will try again later
+Customer 176 has been put into Jane's queue
+Customer 166 had rejoined the waiting list
+Customer 166 has left permanently
+Customer 168 had rejoined the waiting list
+Customer 168 has left permanently
+Customer 177 has left and will try again later
+Customer 178 has left and will try again later
+Customer 165 has finished being served
+Customer 179 has been put into John's queue
+Customer 169 had rejoined the waiting list
+Customer 169 has left permanently
+Customer 180 has left and will try again later
+Customer 171 had rejoined the waiting list
+Customer 171 has left permanently
+Customer 167 has finished being served
+Customer 173 had rejoined the waiting list
+Customer 173 has left permanently
+Customer 181 has left and will try again later
+Customer 182 has been put into Jane's queue
+Customer 175 had rejoined the waiting list
+Customer 175 has left permanently
+Customer 183 has left and will try again later
+Customer 184 has left and will try again later
+Customer 185 has left and will try again later
+Customer 177 had rejoined the waiting list
+Customer 177 has left permanently
+Customer 178 had rejoined the waiting list
+Customer 178 has left permanently
+Customer 170 has finished being served
+Customer 186 has left and will try again later
+Customer 187 has been put into John's queue
+Customer 188 has left and will try again later
+Customer 172 has finished being served
+Customer 180 had rejoined the waiting list
+Customer 180 has left permanently
+Customer 189 has been put into Jane's queue
+Customer 190 has left and will try again later
+Customer 183 had rejoined the waiting list
+Customer 183 has left permanently
+Customer 174 has finished being served
+Customer 184 had rejoined the waiting list
+Customer 184 has left permanently
+Customer 181 had rejoined the waiting list
+Customer 181 has left permanently
+Customer 176 has finished being served
+Customer 185 had rejoined the waiting list
+Customer 185 has left permanently
+Customer 186 had rejoined the waiting list
+Customer 186 has left permanently
+Customer 191 has left and will try again later
+Customer 188 had rejoined the waiting list
+Customer 188 has left permanently
+Customer 182 has finished being served
+Customer 190 had rejoined the waiting list
+Customer 190 has left permanently
+Customer 191 had rejoined the waiting list
+Customer 191 has left permanently
+Customer 179 has finished being served
+
+************************************
+Total Customer Arrived: 207
+Total Customer Served: 66
+Average time to serve: 454
+
