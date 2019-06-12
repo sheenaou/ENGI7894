@@ -1,14 +1,23 @@
+##################################################
+# ENGI 7894 - Concurrent Programming
+# Assignment 2 - Question 1 (Drive Through)
+#
+# Sheena Ou
+# so7122@mun.ca
+# 201523958
+##################################################
 from queue import Queue
 from simpy import RealtimeEnvironment
 from random import randint
-from threading import Lock, Thread, active_count
+from threading import Lock, Thread
 import sys
 
-speed = 1 / 3600
-
+speed = 1 / 3600    # hours to seconds
 
 class DriveThrough:
+    """This class will simulate a Drive Through scenario"""
     def __init__(self, time):
+        """This class will create an instance of a Drive Through"""
         self.length = time
         self.clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
         self.customers = CustomerQueue(time)
@@ -23,8 +32,8 @@ class DriveThrough:
         self.threads = [people, crew0, crew1, monitor]
         self.objects = [self.window0, self.window1, self.monitor]
 
-
     def start(self):
+        """This method will start the drive though simulation"""
         for thread in self.threads:
             thread.start()
         self.clock.run(until=self.length)
@@ -34,7 +43,7 @@ class DriveThrough:
 
         while not self.customers.customer_queue:
             pass
-        self.clock.run(until=self.length + 1000) #let each thread finish before collecting stats
+        self.clock.run(until=self.length + 1000)    # let each thread finish before collecting stats
         time_sum = 0
         complete = 0
         for customer in self.customers.history:
@@ -49,7 +58,9 @@ class DriveThrough:
 
 
 class Customer:
+    """This class represents a customer that appears"""
     def __init__(self, id, time):
+        """This method will create an instance of a Customer"""
         self.id = id
         self.arrival_time = time
         self.wait_time = 0
@@ -70,24 +81,33 @@ class Customer:
         self.actions = self.actions + value
 
     def queue_action(self):
+        """This method will put the customer into the 'Put into window queue' state"""
         self.actions = -1
 
     def in_window(self):
+        """This method will return a boolean value indicating if the customer has been put into a window queue"""
         if self.actions == -1:
             return True
         else:
             return False
 
     def add_time(self, time):
+        """This method will add time to the total amount of time a customer has been waiting to be put into a queue"""
         self.wait_time = self.wait_time + time
 
     def finished(self, time):
+        """This method will set the status of the customer to complete and
+        add the total time it took for the customer to get served"""
         self.finish_time = self.arrival_time + self.wait_time + time
         self.complete = True
 
 
 class CustomerQueue:
+    """This class represents the line up of customers waiting to be put into queues.
+    It will generate an instance of a customer every 50 to 100 seconds.
+        """
     def __init__(self, duration):
+        """This method will create an instance of a CustomerQueue"""
         self.history = []
         self.customer_queue = []
         self.customer_count = 0
@@ -102,22 +122,22 @@ class CustomerQueue:
         while self.status:
             self.clock.run(until=arrive_time)
             c = Customer(id=self.customer_count, time=arrive_time)
-            # print("Customer {} has been created".format(c.id))
             self.history.append(c)
-
             self.queue_lock.acquire()
             self.customer_queue.append(c)
             self.queue_lock.release()
-
             self.customer_count = self.customer_count + 1
             arrive_time = arrive_time + randint(50, 100)
 
     def change_status(self):
+        """This method will halt the thread from performing any more executions of the target function"""
         self.status = False
 
 
 class Monitor:
+    """This class is responsible for placing the customers into a Window Queue"""
     def __init__(self, window0, window1, people):
+        """This method will create an instance of a monitor"""
         self.window0 = window0
         self.window1 = window1
         self.people = people
@@ -136,7 +156,6 @@ class Monitor:
                 queue_message = "Customer {} has been put into {}'s queue"
                 # CASE: Both window queues are full
                 if window0.full() and window1.full():
-
                     def waiting(customer):
                         """This is the waiting sequence for a customer who cannot be put into a queue right away"""
                         clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
@@ -176,7 +195,7 @@ class Monitor:
                                 print("Customer {} has left permanently".format(customer.id))
                             people_lock.release()
 
-                    # Get a Customer
+                    # Execute waiting sequence
                     people_lock.acquire()
                     if people:
                         if people[0].in_window() is False and people[0].actions == 0:
@@ -194,6 +213,7 @@ class Monitor:
                     else:
                         people_lock.release()
 
+                # CASE: There is available space in a window queue
                 else:
                     people_lock.acquire()
                     customer = people.pop(0)
@@ -207,11 +227,14 @@ class Monitor:
                         print(queue_message.format(customer.id, self.window1.id))
 
     def change_status(self):
+        """This method will halt the thread from performing any more executions of the target function"""
         self.status = False
 
 
 class Window:
+    """This class represents the window where the customer is served"""
     def __init__(self, id, payment):
+        """This method will create an instance of a Window"""
         self.id = id
         self.queue = Queue(maxsize=3)
         self.clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
@@ -219,6 +242,7 @@ class Window:
         self.status = True
 
     def serve_queue(self):
+        """This method will serve the customers in the queue. Serving a customer will take 300 to 600 seconds"""
         serve_time = 0
         while self.status:
             if not self.queue.empty():
@@ -231,21 +255,26 @@ class Window:
                 self.payment_queue.complete(c)
 
     def change_status(self):
+        """This method will halt the thread from performing any more executions of the target function"""
         self.status = False
 
 
 class Payment:
+    """This class represents the payment window"""
     def __init__(self):
+        """This class will create an instance of a Payment window"""
         self.queue = []
         self.lock = Lock()
 
     def complete(self, c):
+        """This method will set the customer to complete"""
         self.lock.acquire()
         self.queue.append(c)
         self.lock.release()
 
 
 def main():
+    """The function will parse command line arguments and execute the simulation"""
     if len(sys.argv) == 1:
         print("INVALID FORMAT -- usage: DriveThrough.py <simulation_duration>")
     else:
