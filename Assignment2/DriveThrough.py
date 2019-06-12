@@ -246,7 +246,7 @@ class Payment:
 
 
 def main():
-    if len(sys.argv) == 0:
+    if len(sys.argv) == 1:
         print("INVALID FORMAT -- usage: DriveThrough.py <simulation_duration>")
     else:
         duration = int(sys.argv[1]) * 60  #convert to seconds

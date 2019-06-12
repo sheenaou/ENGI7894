@@ -1,0 +1,813 @@
+*****SIMULATION STARTED*****
+Starting Threads...
+Customer 0 has been put into Checkout 0
+Customer 1 has been put into Checkout 0
+Customer 2 has been put into Checkout 1
+Customer 3 has been put into Checkout 1
+Customer 4 has been put into Checkout 2
+Customer 0 has finished being served
+Customer 5 has been put into Checkout 0
+Customer 4 has finished being served
+Customer 6 has been put into Checkout 2
+Customer 2 has finished being served
+Customer 7 has been put into Checkout 1
+Customer 8 has been put into Checkout 2
+Customer 9 has been put into Checkout 0
+Customer 10 has been put into Checkout 1
+Customer 3 has finished being served
+Customer 11 has been put into Checkout 1
+Customer 1 has finished being served
+Customer 6 has finished being served
+Customer 12 has been put into Checkout 2
+Customer 13 has been put into Checkout 0
+Customer 14 has been put into Checkout 2
+Customer 15 is waiting
+Customer 15 is waiting for a queue to open
+Customer 15 had left and will try again later
+Customer 16 is waiting
+Customer 16 is waiting for a queue to open
+Customer 16 had left and will try again later
+Customer 17 is waiting
+Customer 17 is waiting for a queue to open
+Customer 17 had left and will try again later
+Customer 7 has finished being served
+Customer 5 has finished being served
+Customer 18 has been put into Checkout 0
+Customer 8 has finished being served
+Customer 19 has been put into Checkout 1
+Customer 20 has been put into Checkout 2
+Customer 21 is waiting
+Customer 21 is waiting for a queue to open
+Customer 21 had left and will try again later
+Customer 22 is waiting
+Customer 22 is waiting for a queue to open
+Customer 22 had left and will try again later
+Customer 23 is waiting
+Customer 23 is waiting for a queue to open
+Customer 23 had left and will try again later
+Customer 15 had rejoined the checkout area
+Customer 24 is waiting
+Customer 24 is waiting for a queue to open
+Customer 10 has finished being served
+Customer 24 had left and will try again later
+Customer 15 has been put into Checkout 1
+Customer 12 has finished being served
+Customer 25 has been put into Checkout 2
+Customer 16 had rejoined the checkout area
+Customer 16 has left permanently
+Customer 9 has finished being served
+Customer 17 had rejoined the checkout area
+Customer 17 has been put into Checkout 0
+Customer 26 is waiting
+Customer 26 is waiting for a queue to open
+Customer 26 had left and will try again later
+Customer 27 is waiting
+Customer 27 is waiting for a queue to open
+Customer 27 had left and will try again later
+Customer 28 is waiting
+Customer 28 is waiting for a queue to open
+Customer 28 had left and will try again later
+Customer 29 is waiting
+Customer 29 is waiting for a queue to open
+Customer 11 has finished being served
+Customer 29 has been put into Checkout 1
+Customer 21 had rejoined the checkout area
+Customer 21 has left permanently
+Customer 30 is waiting
+Customer 30 is waiting for a queue to open
+Customer 30 had left and will try again later
+Customer 22 had rejoined the checkout area
+Customer 14 has finished being served
+Customer 22 has been put into Checkout 2
+Customer 31 is waiting
+Customer 31 is waiting for a queue to open
+Customer 31 had left and will try again later
+Customer 32 is waiting
+Customer 32 is waiting for a queue to open
+Customer 23 had rejoined the checkout area
+Customer 32 had left and will try again later
+Customer 23 has left permanently
+Customer 13 has finished being served
+Customer 33 has been put into Checkout 0
+Customer 24 had rejoined the checkout area
+Customer 24 has left permanently
+Customer 34 is waiting
+Customer 34 is waiting for a queue to open
+Customer 34 had left and will try again later
+Customer 35 is waiting
+Customer 26 had rejoined the checkout area
+Customer 35 is waiting for a queue to open
+Customer 26 has left permanently
+Customer 35 had left and will try again later
+Customer 27 had rejoined the checkout area
+Customer 27 has left permanently
+Customer 36 is waiting
+Customer 36 is waiting for a queue to open
+Customer 20 has finished being served
+Customer 36 has been put into Checkout 2
+Customer 28 had rejoined the checkout area
+Customer 37 is waiting
+Customer 37 is waiting for a queue to open
+Customer 37 had left and will try again later
+Customer 19 has finished being served
+Customer 28 has left permanently
+Customer 38 has been put into Checkout 1
+Customer 18 has finished being served
+Customer 30 had rejoined the checkout area
+Customer 30 has been put into Checkout 0
+Customer 39 is waiting
+Customer 39 is waiting for a queue to open
+Customer 31 had rejoined the checkout area
+Customer 39 had left and will try again later
+Customer 31 has left permanently
+Customer 40 is waiting
+Customer 40 is waiting for a queue to open
+Customer 32 had rejoined the checkout area
+Customer 40 had left and will try again later
+Customer 32 has left permanently
+Customer 41 is waiting
+Customer 41 is waiting for a queue to open
+Customer 41 had left and will try again later
+Customer 42 is waiting
+Customer 42 is waiting for a queue to open
+Customer 42 had left and will try again later
+Customer 34 had rejoined the checkout area
+Customer 25 has finished being served
+Customer 15 has finished being served
+Customer 43 has been put into Checkout 1
+Customer 34 has been put into Checkout 2
+Customer 35 had rejoined the checkout area
+Customer 35 has left permanently
+Customer 44 is waiting
+Customer 44 is waiting for a queue to open
+Customer 44 had left and will try again later
+Customer 45 is waiting
+Customer 45 is waiting for a queue to open
+Customer 37 had rejoined the checkout area
+Customer 45 had left and will try again later
+Customer 37 has left permanently
+Customer 17 has finished being served
+Customer 46 has been put into Checkout 0
+Customer 47 is waiting
+Customer 47 is waiting for a queue to open
+Customer 47 had left and will try again later
+Customer 39 had rejoined the checkout area
+Customer 48 is waiting
+Customer 48 is waiting for a queue to open
+Customer 39 has left permanently
+Customer 48 had left and will try again later
+Customer 40 had rejoined the checkout area
+Customer 40 has left permanently
+Customer 49 is waiting
+Customer 49 is waiting for a queue to open
+Customer 41 had rejoined the checkout area
+Customer 49 had left and will try again later
+Customer 50 is waiting
+Customer 22 has finished being served
+Customer 50 is waiting for a queue to open
+Customer 41 has been put into Checkout 2
+Customer 29 has finished being served
+Customer 42 had rejoined the checkout area
+Customer 50 has been put into Checkout 1
+Customer 42 has left permanently
+Customer 51 is waiting
+Customer 51 is waiting for a queue to open
+Customer 51 had left and will try again later
+Customer 52 is waiting
+Customer 52 is waiting for a queue to open
+Customer 52 had left and will try again later
+Customer 53 is waiting
+Customer 53 is waiting for a queue to open
+Customer 44 had rejoined the checkout area
+Customer 53 had left and will try again later
+Customer 33 has finished being served
+Customer 44 has been put into Checkout 0
+Customer 45 had rejoined the checkout area
+Customer 54 is waiting
+Customer 54 is waiting for a queue to open
+Customer 45 has left permanently
+Customer 54 had left and will try again later
+Customer 55 is waiting
+Customer 55 is waiting for a queue to open
+Customer 55 had left and will try again later
+Customer 56 is waiting
+Customer 56 is waiting for a queue to open
+Customer 47 had rejoined the checkout area
+Customer 56 had left and will try again later
+Customer 47 has left permanently
+Customer 48 had rejoined the checkout area
+Customer 57 is waiting
+Customer 57 is waiting for a queue to open
+Customer 36 has finished being served
+Customer 57 has been put into Checkout 2
+Customer 48 has left permanently
+Customer 58 is waiting
+Customer 38 has finished being served
+Customer 58 is waiting for a queue to open
+Customer 58 has been put into Checkout 1
+Customer 59 is waiting
+Customer 49 had rejoined the checkout area
+Customer 59 is waiting for a queue to open
+Customer 49 has left permanently
+Customer 59 had left and will try again later
+Customer 60 is waiting
+Customer 60 is waiting for a queue to open
+Customer 51 had rejoined the checkout area
+Customer 60 had left and will try again later
+Customer 51 has left permanently
+Customer 30 has finished being served
+Customer 61 is waiting
+Customer 61 is waiting for a queue to open
+Customer 61 has been put into Checkout 0
+Customer 52 had rejoined the checkout area
+Customer 53 had rejoined the checkout area
+Customer 62 is waiting
+Customer 62 is waiting for a queue to open
+Customer 52 has left permanently
+Customer 53 has left permanently
+Customer 62 had left and will try again later
+Customer 43 has finished being served
+Customer 63 is waiting
+Customer 63 is waiting for a queue to open
+Customer 63 has been put into Checkout 1
+Customer 54 had rejoined the checkout area
+Customer 64 is waiting
+Customer 54 has left permanently
+Customer 64 is waiting for a queue to open
+Customer 55 had rejoined the checkout area
+Customer 64 had left and will try again later
+Customer 55 has left permanently
+Customer 65 is waiting
+Customer 56 had rejoined the checkout area
+Customer 65 is waiting for a queue to open
+Customer 65 had left and will try again later
+Customer 56 has left permanently
+Customer 34 has finished being served
+Customer 66 has been put into Checkout 2
+Customer 67 is waiting
+Customer 67 is waiting for a queue to open
+Customer 67 had left and will try again later
+Customer 68 is waiting
+Customer 68 is waiting for a queue to open
+Customer 59 had rejoined the checkout area
+Customer 68 had left and will try again later
+Customer 46 has finished being served
+Customer 59 has been put into Checkout 0
+Customer 69 is waiting
+Customer 69 is waiting for a queue to open
+Customer 50 has finished being served
+Customer 69 has been put into Checkout 1
+Customer 60 had rejoined the checkout area
+Customer 60 has left permanently
+Customer 70 is waiting
+Customer 70 is waiting for a queue to open
+Customer 70 had left and will try again later
+Customer 71 is waiting
+Customer 62 had rejoined the checkout area
+Customer 71 is waiting for a queue to open
+Customer 71 had left and will try again later
+Customer 62 has left permanently
+Customer 41 has finished being served
+Customer 72 has been put into Checkout 2
+Customer 44 has finished being served
+Customer 64 had rejoined the checkout area
+Customer 64 has been put into Checkout 0
+Customer 58 has finished being served
+Customer 73 has been put into Checkout 1
+Customer 65 had rejoined the checkout area
+Customer 65 has left permanently
+Customer 74 is waiting
+Customer 74 is waiting for a queue to open
+Customer 74 had left and will try again later
+Customer 75 is waiting
+Customer 75 is waiting for a queue to open
+Customer 75 had left and will try again later
+Customer 67 had rejoined the checkout area
+Customer 68 had rejoined the checkout area
+Customer 67 has left permanently
+Customer 76 is waiting
+Customer 76 is waiting for a queue to open
+Customer 68 has left permanently
+Customer 76 had left and will try again later
+Customer 61 has finished being served
+Customer 77 has been put into Checkout 0
+Customer 78 is waiting
+Customer 78 is waiting for a queue to open
+Customer 70 had rejoined the checkout area
+Customer 78 had left and will try again later
+Customer 70 has left permanently
+Customer 79 is waiting
+Customer 79 is waiting for a queue to open
+Customer 57 has finished being served
+Customer 79 has been put into Checkout 2
+Customer 71 had rejoined the checkout area
+Customer 71 has left permanently
+Customer 63 has finished being served
+Customer 80 has been put into Checkout 1
+Customer 81 is waiting
+Customer 81 is waiting for a queue to open
+Customer 81 had left and will try again later
+Customer 82 is waiting
+Customer 82 is waiting for a queue to open
+Customer 74 had rejoined the checkout area
+Customer 82 had left and will try again later
+Customer 74 has left permanently
+Customer 83 is waiting
+Customer 83 is waiting for a queue to open
+Customer 75 had rejoined the checkout area
+Customer 83 had left and will try again later
+Customer 66 has finished being served
+Customer 75 has been put into Checkout 2
+Customer 84 is waiting
+Customer 59 has finished being served
+Customer 84 is waiting for a queue to open
+Customer 84 has been put into Checkout 0
+Customer 76 had rejoined the checkout area
+Customer 76 has left permanently
+Customer 85 is waiting
+Customer 85 is waiting for a queue to open
+Customer 69 has finished being served
+Customer 85 has been put into Checkout 1
+Customer 86 is waiting
+Customer 86 is waiting for a queue to open
+Customer 78 had rejoined the checkout area
+Customer 86 had left and will try again later
+Customer 78 has left permanently
+Customer 87 is waiting
+Customer 87 is waiting for a queue to open
+Customer 87 had left and will try again later
+Customer 88 is waiting
+Customer 88 is waiting for a queue to open
+Customer 88 had left and will try again later
+Customer 89 is waiting
+Customer 89 is waiting for a queue to open
+Customer 72 has finished being served
+Customer 89 has been put into Checkout 2
+Customer 81 had rejoined the checkout area
+Customer 73 has finished being served
+Customer 90 is waiting
+Customer 81 has been put into Checkout 1
+Customer 90 is waiting for a queue to open
+Customer 82 had rejoined the checkout area
+Customer 90 had left and will try again later
+Customer 91 is waiting
+Customer 64 has finished being served
+Customer 82 has left permanently
+Customer 91 is waiting for a queue to open
+Customer 91 has been put into Checkout 0
+Customer 83 had rejoined the checkout area
+Customer 83 has left permanently
+Customer 92 is waiting
+Customer 92 is waiting for a queue to open
+Customer 92 had left and will try again later
+Customer 93 is waiting
+Customer 93 is waiting for a queue to open
+Customer 93 had left and will try again later
+Customer 94 is waiting
+Customer 94 is waiting for a queue to open
+Customer 94 had left and will try again later
+Customer 86 had rejoined the checkout area
+Customer 80 has finished being served
+Customer 86 has been put into Checkout 1
+Customer 95 is waiting
+Customer 95 is waiting for a queue to open
+Customer 95 had left and will try again later
+Customer 87 had rejoined the checkout area
+Customer 77 has finished being served
+Customer 87 has left permanently
+Customer 88 had rejoined the checkout area
+Customer 88 has been put into Checkout 0
+Customer 96 is waiting
+Customer 96 is waiting for a queue to open
+Customer 96 had left and will try again later
+Customer 79 has finished being served
+Customer 97 has been put into Checkout 2
+Customer 98 is waiting
+Customer 98 is waiting for a queue to open
+Customer 98 had left and will try again later
+Customer 90 had rejoined the checkout area
+Customer 90 has left permanently
+Customer 99 is waiting
+Customer 99 is waiting for a queue to open
+Customer 85 has finished being served
+Customer 99 has been put into Checkout 1
+Customer 100 is waiting
+Customer 100 is waiting for a queue to open
+Customer 92 had rejoined the checkout area
+Customer 100 had left and will try again later
+Customer 92 has left permanently
+Customer 84 has finished being served
+Customer 101 has been put into Checkout 0
+Customer 93 had rejoined the checkout area
+Customer 75 has finished being served
+Customer 93 has left permanently
+Customer 94 had rejoined the checkout area
+Customer 94 has been put into Checkout 2
+Customer 102 is waiting
+Customer 102 is waiting for a queue to open
+Customer 102 had left and will try again later
+Customer 95 had rejoined the checkout area
+Customer 103 is waiting
+Customer 95 has left permanently
+Customer 103 is waiting for a queue to open
+Customer 103 had left and will try again later
+Customer 104 is waiting
+Customer 104 is waiting for a queue to open
+Customer 96 had rejoined the checkout area
+Customer 104 had left and will try again later
+Customer 96 has left permanently
+Customer 105 is waiting
+Customer 105 is waiting for a queue to open
+Customer 105 had left and will try again later
+Customer 89 has finished being served
+Customer 98 had rejoined the checkout area
+Customer 98 has been put into Checkout 2
+Customer 81 has finished being served
+Customer 106 has been put into Checkout 1
+Customer 91 has finished being served
+Customer 107 has been put into Checkout 0
+Customer 100 had rejoined the checkout area
+Customer 108 is waiting
+Customer 108 is waiting for a queue to open
+Customer 108 had left and will try again later
+Customer 100 has left permanently
+Customer 109 is waiting
+Customer 109 is waiting for a queue to open
+Customer 109 had left and will try again later
+Customer 110 is waiting
+Customer 102 had rejoined the checkout area
+Customer 86 has finished being served
+Customer 110 is waiting for a queue to open
+Customer 102 has left permanently
+Customer 110 has been put into Checkout 1
+Customer 111 is waiting
+Customer 111 is waiting for a queue to open
+Customer 103 had rejoined the checkout area
+Customer 111 had left and will try again later
+Customer 104 had rejoined the checkout area
+Customer 97 has finished being served
+Customer 104 has been put into Checkout 2
+Customer 112 is waiting
+Customer 112 is waiting for a queue to open
+Customer 103 has left permanently
+Customer 112 had left and will try again later
+Customer 105 had rejoined the checkout area
+Customer 88 has finished being served
+Customer 113 has been put into Checkout 0
+Customer 105 has left permanently
+Customer 114 is waiting
+Customer 114 is waiting for a queue to open
+Customer 114 had left and will try again later
+Customer 115 is waiting
+Customer 115 is waiting for a queue to open
+Customer 115 had left and will try again later
+Customer 99 has finished being served
+Customer 108 had rejoined the checkout area
+Customer 108 has been put into Checkout 1
+Customer 116 is waiting
+Customer 116 is waiting for a queue to open
+Customer 116 had left and will try again later
+Customer 117 is waiting
+Customer 109 had rejoined the checkout area
+Customer 117 is waiting for a queue to open
+Customer 117 had left and will try again later
+Customer 109 has left permanently
+Customer 94 has finished being served
+Customer 118 has been put into Checkout 2
+Customer 101 has finished being served
+Customer 119 has been put into Checkout 0
+Customer 111 had rejoined the checkout area
+Customer 111 has left permanently
+Customer 120 is waiting
+Customer 120 is waiting for a queue to open
+Customer 112 had rejoined the checkout area
+Customer 120 had left and will try again later
+Customer 112 has left permanently
+Customer 121 is waiting
+Customer 121 is waiting for a queue to open
+Customer 121 had left and will try again later
+Customer 114 had rejoined the checkout area
+Customer 114 has left permanently
+Customer 122 is waiting
+Customer 122 is waiting for a queue to open
+Customer 115 had rejoined the checkout area
+Customer 122 had left and will try again later
+Customer 106 has finished being served
+Customer 115 has been put into Checkout 1
+Customer 123 is waiting
+Customer 123 is waiting for a queue to open
+Customer 123 had left and will try again later
+Customer 124 is waiting
+Customer 124 is waiting for a queue to open
+Customer 116 had rejoined the checkout area
+Customer 124 had left and will try again later
+Customer 116 has left permanently
+Customer 98 has finished being served
+Customer 125 has been put into Checkout 2
+Customer 117 had rejoined the checkout area
+Customer 117 has left permanently
+Customer 107 has finished being served
+Customer 126 has been put into Checkout 0
+Customer 127 is waiting
+Customer 127 is waiting for a queue to open
+Customer 127 had left and will try again later
+Customer 120 had rejoined the checkout area
+Customer 128 is waiting
+Customer 128 is waiting for a queue to open
+Customer 110 has finished being served
+Customer 128 has been put into Checkout 1
+Customer 120 has left permanently
+Customer 129 is waiting
+Customer 129 is waiting for a queue to open
+Customer 121 had rejoined the checkout area
+Customer 129 had left and will try again later
+Customer 121 has left permanently
+Customer 113 has finished being served
+Customer 130 has been put into Checkout 0
+Customer 122 had rejoined the checkout area
+Customer 122 has left permanently
+Customer 123 had rejoined the checkout area
+Customer 131 is waiting
+Customer 131 is waiting for a queue to open
+Customer 123 has left permanently
+Customer 131 had left and will try again later
+Customer 124 had rejoined the checkout area
+Customer 104 has finished being served
+Customer 132 has been put into Checkout 2
+Customer 124 has left permanently
+Customer 133 is waiting
+Customer 133 is waiting for a queue to open
+Customer 133 had left and will try again later
+Customer 108 has finished being served
+Customer 134 is waiting
+Customer 134 is waiting for a queue to open
+Customer 134 has been put into Checkout 1
+Customer 119 has finished being served
+Customer 135 has been put into Checkout 0
+Customer 127 had rejoined the checkout area
+Customer 127 has left permanently
+Customer 136 is waiting
+Customer 136 is waiting for a queue to open
+Customer 136 had left and will try again later
+Customer 137 is waiting
+Customer 137 is waiting for a queue to open
+Customer 118 has finished being served
+Customer 137 has been put into Checkout 2
+Customer 129 had rejoined the checkout area
+Customer 129 has left permanently
+Customer 138 is waiting
+Customer 138 is waiting for a queue to open
+Customer 138 had left and will try again later
+Customer 126 has finished being served
+Customer 139 has been put into Checkout 0
+Customer 131 had rejoined the checkout area
+Customer 131 has left permanently
+Customer 140 is waiting
+Customer 115 has finished being served
+Customer 140 is waiting for a queue to open
+Customer 140 has been put into Checkout 1
+Customer 141 is waiting
+Customer 141 is waiting for a queue to open
+Customer 141 had left and will try again later
+Customer 133 had rejoined the checkout area
+Customer 142 is waiting
+Customer 133 has left permanently
+Customer 142 is waiting for a queue to open
+Customer 142 had left and will try again later
+Customer 143 is waiting
+Customer 143 is waiting for a queue to open
+Customer 143 had left and will try again later
+Customer 130 has finished being served
+Customer 144 has been put into Checkout 0
+Customer 125 has finished being served
+Customer 136 had rejoined the checkout area
+Customer 136 has been put into Checkout 2
+Customer 145 is waiting
+Customer 145 is waiting for a queue to open
+Customer 145 had left and will try again later
+Customer 146 is waiting
+Customer 146 is waiting for a queue to open
+Customer 138 had rejoined the checkout area
+Customer 146 had left and will try again later
+Customer 138 has left permanently
+Customer 147 is waiting
+Customer 147 is waiting for a queue to open
+Customer 128 has finished being served
+Customer 147 has been put into Checkout 1
+Customer 148 is waiting
+Customer 135 has finished being served
+Customer 148 is waiting for a queue to open
+Customer 148 has been put into Checkout 0
+Customer 149 is waiting
+Customer 149 is waiting for a queue to open
+Customer 149 had left and will try again later
+Customer 150 is waiting
+Customer 150 is waiting for a queue to open
+Customer 132 has finished being served
+Customer 150 has been put into Checkout 2
+Customer 141 had rejoined the checkout area
+Customer 151 is waitingCustomer 141 has left permanently
+
+Customer 151 is waiting for a queue to open
+Customer 151 had left and will try again later
+Customer 142 had rejoined the checkout area
+Customer 152 is waiting
+Customer 143 had rejoined the checkout area
+Customer 152 is waiting for a queue to open
+Customer 142 has left permanently
+Customer 143 has left permanently
+Customer 152 had left and will try again later
+Customer 153 is waiting
+Customer 153 is waiting for a queue to open
+Customer 153 had left and will try again later
+Customer 154 is waiting
+Customer 154 is waiting for a queue to open
+Customer 134 has finished being served
+Customer 154 has been put into Checkout 1
+Customer 145 had rejoined the checkout area
+Customer 145 has left permanently
+Customer 155 is waiting
+Customer 155 is waiting for a queue to open
+Customer 137 has finished being served
+Customer 146 had rejoined the checkout area
+Customer 155 has been put into Checkout 2
+Customer 146 has left permanently
+Customer 156 is waiting
+Customer 156 is waiting for a queue to open
+Customer 139 has finished being served
+Customer 156 has been put into Checkout 0
+Customer 157 is waiting
+Customer 157 is waiting for a queue to open
+Customer 157 had left and will try again later
+Customer 158 is waiting
+Customer 158 is waiting for a queue to open
+Customer 149 had rejoined the checkout area
+Customer 158 had left and will try again later
+Customer 149 has left permanently
+Customer 159 is waiting
+Customer 159 is waiting for a queue to open
+Customer 159 had left and will try again later
+Customer 140 has finished being served
+Customer 160 has been put into Checkout 1
+Customer 151 had rejoined the checkout area
+Customer 151 has left permanently
+Customer 161 is waiting
+Customer 161 is waiting for a queue to open
+Customer 152 had rejoined the checkout area
+Customer 161 had left and will try again later
+Customer 152 has left permanently
+Customer 144 has finished being served
+Customer 162 has been put into Checkout 0
+Customer 153 had rejoined the checkout area
+Customer 153 has left permanently
+Customer 136 has finished being served
+Customer 163 has been put into Checkout 2
+Customer 147 has finished being served
+Customer 164 has been put into Checkout 1
+Customer 165 is waiting
+Customer 165 is waiting for a queue to open
+Customer 165 had left and will try again later
+Customer 157 had rejoined the checkout area
+Customer 157 has left permanently
+Customer 166 is waiting
+Customer 166 is waiting for a queue to open
+Customer 158 had rejoined the checkout area
+Customer 166 had left and will try again later
+Customer 150 has finished being served
+Customer 158 has been put into Checkout 2
+Customer 167 is waiting
+Customer 167 is waiting for a queue to open
+Customer 159 had rejoined the checkout area
+Customer 167 had left and will try again later
+Customer 159 has left permanently
+Customer 148 has finished being served
+Customer 168 has been put into Checkout 0
+Customer 161 had rejoined the checkout area
+Customer 169 is waiting
+Customer 169 is waiting for a queue to open
+Customer 169 had left and will try again later
+Customer 161 has left permanently
+Customer 170 is waiting
+Customer 170 is waiting for a queue to open
+Customer 170 had left and will try again later
+Customer 154 has finished being served
+Customer 171 has been put into Checkout 1
+Customer 172 is waiting
+Customer 172 is waiting for a queue to open
+Customer 172 had left and will try again later
+Customer 173 is waiting
+Customer 173 is waiting for a queue to open
+Customer 155 has finished being served
+Customer 156 has finished being served
+Customer 173 has been put into Checkout 0
+Customer 165 had rejoined the checkout area
+Customer 165 has been put into Checkout 2
+Customer 174 is waiting
+Customer 174 is waiting for a queue to open
+Customer 166 had rejoined the checkout area
+Customer 174 had left and will try again later
+Customer 166 has left permanently
+Customer 175 is waiting
+Customer 160 has finished being served
+Customer 175 is waiting for a queue to open
+Customer 175 has been put into Checkout 1
+Customer 167 had rejoined the checkout area
+Customer 167 has left permanently
+Customer 176 is waiting
+Customer 176 is waiting for a queue to open
+Customer 176 had left and will try again later
+Customer 177 is waiting
+Customer 177 is waiting for a queue to open
+Customer 169 had rejoined the checkout area
+Customer 177 had left and will try again later
+Customer 169 has left permanently
+Customer 178 is waiting
+Customer 178 is waiting for a queue to open
+Customer 170 had rejoined the checkout area
+Customer 178 had left and will try again later
+Customer 170 has left permanently
+Customer 179 is waiting
+Customer 163 has finished being served
+Customer 179 is waiting for a queue to open
+Customer 179 has been put into Checkout 2
+Customer 162 has finished being served
+Customer 180 has been put into Checkout 0
+Customer 172 had rejoined the checkout area
+Customer 172 has left permanently
+Customer 181 is waiting
+Customer 181 is waiting for a queue to open
+Customer 181 had left and will try again later
+Customer 164 has finished being served
+Customer 182 has been put into Checkout 1
+Customer 174 had rejoined the checkout area
+Customer 174 has left permanently
+Customer 183 is waiting
+Customer 183 is waiting for a queue to open
+Customer 183 had left and will try again later
+Customer 158 has finished being served
+Customer 184 is waiting
+Customer 176 had rejoined the checkout area
+Customer 176 has been put into Checkout 2
+Customer 184 is waiting for a queue to open
+Customer 184 had left and will try again later
+Customer 185 is waiting
+Customer 185 is waiting for a queue to open
+Customer 177 had rejoined the checkout area
+Customer 185 had left and will try again later
+Customer 177 has left permanently
+Customer 171 has finished being served
+Customer 178 had rejoined the checkout area
+Customer 178 has been put into Checkout 1
+Customer 168 has finished being served
+Customer 186 has been put into Checkout 0
+Customer 187 is waiting
+Customer 187 is waiting for a queue to open
+Customer 187 had left and will try again later
+Customer 188 is waiting
+Customer 188 is waiting for a queue to open
+Customer 188 had left and will try again later
+Customer 181 had rejoined the checkout area
+Customer 189 is waiting
+Customer 189 is waiting for a queue to open
+Customer 189 had left and will try again later
+Customer 165 has finished being served
+Customer 181 has been put into Checkout 2
+Customer 190 is waiting
+Customer 190 is waiting for a queue to open
+Customer 190 had left and will try again later
+Customer 183 had rejoined the checkout area
+Customer 183 has left permanently
+Customer 173 has finished being served
+Customer 175 has finished being served
+Customer 184 had rejoined the checkout area
+Customer 184 has been put into Checkout 0
+Customer 185 had rejoined the checkout area
+Customer 185 has been put into Checkout 1
+Customer 187 had rejoined the checkout area
+Customer 187 has left permanently
+Customer 180 has finished being served
+Customer 188 had rejoined the checkout area
+Customer 188 has been put into Checkout 0
+Customer 179 has finished being served
+Customer 189 had rejoined the checkout area
+Customer 189 has been put into Checkout 2
+Customer 190 had rejoined the checkout area
+Customer 190 has left permanently
+Customer 182 has finished being served
+Customer 176 has finished being served
+Customer 186 has finished being served
+Customer 178 has finished being served
+Customer 181 has finished being served
+Customer 184 has finished being served
+Customer 189 has finished being served
+Customer 185 has finished being served
+Customer 188 has finished being served
+All threads have stopped...
+
+************************************
+Total Customer Arrived: 191
+Total Customer Served: 107
+Average time to serve: 450
+
+
+Process finished with exit code 0
