@@ -1,11 +1,12 @@
 from random import randint
 from threading import Lock, Thread
 from simpy import RealtimeEnvironment
+import sys
 
-speed = 0.10
+speed = 0.25
 action_time = 2
 active_light = None
-
+error = None
 directions = {0:"left", 1:"straight", 2:"right"}
 
 class Car:
@@ -43,68 +44,88 @@ class Road:
         self.locks = locks
 
     def green_actions(self, direction):
+        global error
         clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
-        print("Car {} is trying {}".format(self.cars[0].id, directions[self.cars[0].direction]))
-        # CASE: Left turn
-        if int(direction) == 0:
-            if self.locks[str(self.left)].acquire():
-                print("Car {} acquired lock {} 1/2".format(self.cars[0].id, str(self.left)))
-                if self.locks[str(self.id)].acquire(timeout=action_time):
-                    print("Car {} acquired lock {} 2/2".format(self.cars[0].id, str(self.id)))
-                    clock.run(until=action_time) # Two seconds to perform actions -- arbitrary
-                    car = self.cars.pop(0)
-                    print("Car {} has made a left turn".format(car.id))
-                    self.locks[str(self.id)].release()
-                self.locks[str(self.left)].release()
+        print("Car {} is trying to go {}".format(self.cars[0].id, directions[self.cars[0].direction]))
+        if not error:
+            # CASE: Left turn
+            if int(direction) == 0:
+                print("Car {} is checking if it is clear".format(self.cars[0].id))
+                if self.locks[str(self.left)].acquire():
+                    if self.locks[str(self.id)].acquire(timeout=action_time):
+                        print("It is clear for Car {} to go".format(self.cars[0].id))
+                        clock.run(until=action_time) # Two seconds to perform actions -- arbitrary
+                        car = self.cars.pop(0)
+                        print("Car {} has made a left turn".format(car.id))
+                        self.locks[str(self.id)].release()
+                    else:
+                        print("Car {} was unable to go...trying again")
+                    self.locks[str(self.left)].release()
 
-        # CASE: Straight
-        elif int(direction) == 1:
-            if self.locks[str(self.right)].acquire():
-                print("Car {} acquired lock {} 1/2".format(self.cars[0].id, str(self.right)))
-                if self.locks[str(self.straight)].acquire(timeout=action_time):
-                    print("Car {} acquired lock {} 2/2".format(self.cars[0].id, str(self.straight)))
-                    clock.run(until=action_time)
-                    car = self.cars.pop(0)
-                    print("Car {} has driven straight".format(car.id))
-                    self.locks[str(self.straight)].release()
+            # CASE: Straight
+            elif int(direction) == 1:
+                print("Car {} is checking if it is clear".format(self.cars[0].id))
+                if self.locks[str(self.right)].acquire():
+                    if self.locks[str(self.straight)].acquire(timeout=action_time):
+                        print("It is clear for Car {} to go".format(self.cars[0].id))
+                        clock.run(until=action_time)
+                        car = self.cars.pop(0)
+                        print("Car {} has driven straight".format(car.id))
+                        self.locks[str(self.straight)].release()
+                    else:
+                        print("Car {} was unable to go...trying again")
+                    self.locks[str(self.right)].release()
+
+            # CASE: Right turn
+            elif int(direction) == 2:
+                print("Car {} is checking if it is clear".format(self.cars[0].id))
+                self.locks[str(self.right)].acquire()
+                print("It is clear for Car {} to go".format(self.cars[0].id))
+                clock.run(until=2)
+                car = self.cars.pop(0)
+                print("Car {} has made a right turn".format(car.id))
                 self.locks[str(self.right)].release()
 
-        # CASE: Right turn
-        elif int(direction) == 2:
-            self.locks[str(self.right)].acquire()
-            print("Car {} acquired lock {} 1/1".format(self.cars[0].id, str(self.right)))
-            clock.run(until=2)
-            car = self.cars.pop(0)
-            print("Car {} has made a right turn".format(car.id))
-            self.locks[str(self.right)].release()
-
-        # CASE: Unknown action
-        else:
-            pass
+            # CASE: Unknown action
+            else:
+                pass
 
     def red_actions(self, direction):
         complete = False
         global active_light
+        global human
+        global error
         if int(direction) == 2:
-            while self.id != (active_light.direction % 2) and not complete:
+            while self.id != (active_light.direction % 2) and not complete and not error:
+                print("Car {} wants to turn right on a red light".format(self.cars[0].id))
                 clock = RealtimeEnvironment(initial_time=0, factor=speed, strict=False)
                 clock.run(until=3)
                 if self.locks[str(self.right)].acquire(False):
-                    clock.run(until=5)
                     car = self.cars.pop(0)
+                    print("It is clear for Car {}".format(car.id))
+                    clock.run(until=5)
                     print("Car {} has made a right turn".format(car.id))
                     self.locks[str(self.right)].release()
                     complete = True
+                else:
+                    if human:
+                        print("WARNING:Car {} has caused a crash...\n SIMULATION OVER".format(self.cars[0].id))
+
+                        error = True
+                    else:
+                        print("Car {} was unable turn right on a red light, trying again".format(self.cars[0].id))
 
     def run(self):
         global active_light
         while self.status:
             if active_light is not None and len(self.cars) > 0:
                 if (self.id % 2) == active_light.direction:   # The light is green for this road
-                    print("Road {} is has a green light".format(self.id))
                     self.green_actions(direction=self.cars[0].direction)
                 else:
                     self.red_actions(direction=self.cars[0].direction)
+            elif len(self.cars) == 0:
+                print("All the cars in road {} has been cleared".format(self.id))
+                self.status = False
 
 
 class TrafficLight:
@@ -135,44 +156,63 @@ class TrafficLightController:
                 global active_light
                 active_light = light
                 print("*************************\n"
-                      "Active Light: {}\n"
-                      "Inactive Light : {}\n"
-                      "*************************\n".format(active_light.direction, other_light.direction))
+                      "Active Light: {} and {}\n"
+                      "Inactive Light : {} and {}\n"
+                      "*************************\n".format(active_light.direction,
+                                                           int(active_light.direction) + 2,
+                                                           other_light.direction,
+                                                           other_light.direction + 2))
                 other_light.set_colour("red")
                 light.set_colour("green")
-                clock.run(until=28)
+                clock.run(until=18)
                 light.set_colour("yellow")
-                clock.run(until=30)
+                clock.run(until=20)
 
 
 class Intersection:
     def __init__(self):
+        global human
         self.lights = TrafficLightController()
-        self.road0 = Road(id=0, cars=1)
-        self.road1 = Road(id=1, cars=1)
-        self.road2 = Road(id=2, cars=2)
-        self.road3 = Road(id=3, cars=3)
+        self.road0 = Road(id=0, cars=1 if not human else 10)
+        self.road1 = Road(id=1, cars=1 if not human else 10)
+        self.road2 = Road(id=2, cars=2 if not human else 10)
+        self.road3 = Road(id=3, cars=3 if not human else 10)
+        self.roads = [self.road0, self.road1, self.road2, self.road3]
         locks = {
             "0": self.road0.incoming,
             "1": self.road1.incoming,
             "2": self.road2.incoming,
             "3": self.road3.incoming,
         }
-        for road in [self.road0, self.road1, self.road2, self.road3]:
+        for road in self.roads:
             road.set_lock(locks)
-        self.thread_lights = Thread(target=self.lights.run)
+        self.thread_lights = Thread(target=self.lights.run, daemon = True)
         self.thread_roads = [
-            Thread(target=self.road0.run),
-            Thread(target=self.road1.run),
-            Thread(target=self.road2.run),
-            Thread(target=self.road3.run)
+            Thread(target=self.road0.run, daemon = True),
+            Thread(target=self.road1.run, daemon = True),
+            Thread(target=self.road2.run, daemon = True),
+            Thread(target=self.road3.run, daemon = True)
         ]
 
     def run(self):
         self.thread_lights.start()
         for road in self.thread_roads:
             road.start()
+        status = True
+        while status:
+            if error:
+                sys.exit()
+            else:
+                count = 0
+                for road in self.roads:
+                    if not road.status:
+                        count = count + 1
+                if count == 4:
+                    status = False
+                    self.lights.active = False
+        print("Simulation is COMPLETE")
 
+simulation = input("Would you like to simulate with human error? Y/N\n")
+human = True if simulation == "Y" else False
 t = Intersection()
-wait = input()
 t.run()
