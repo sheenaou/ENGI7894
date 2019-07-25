@@ -1,0 +1,87 @@
+##################################################
+*
+# Set up instructions for trajectory_parser.py
+#
+##################################################
+
+PREREQUISITES:
+- Windows 10 Operation System
+- Nvidia Graphics Card
+
+STEP 1:
+- Install Python 2.7
+- The latest stable version as of July 24th, 2019 is 2.7.16
+- The installer can be found here https://www.python.org/downloads/release/python-2716/
+- Ensure your PATH environment variable has been updated
+
+STEP 2:
+- Install the latest version of Nvidia's Cuda
+- The installer can be found here https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
+- Select Custom installations
+    - Under the CUDA expandable tab, select "Runtime", "Development", "NSight Compute", "Documentation", and "Samples"
+- Restart your PC and ensure your PATH environment variable has been updated
+
+STEP 3:
+- Install Microsoft Visual C++ Compiler for Python 2.7
+- The installer can be found here https://www.microsoft.com/en-us/download/details.aspx?id=44266&ranMID=24542&ranEAID=TnL5HPStwNw&ranSiteID=TnL5HPStwNw-HDrzny_MIPcQPJVLbO0e4A&epi=TnL5HPStwNw-HDrzny_MIPcQPJVLbO0e4A&irgwc=1&OCID=AID2000142_aff_7593_1243925&tduid=(ir__tjuwqrwzyckfritzkk0sohzn0m2xjiqd0fym1xi000)(7593)(1243925)(TnL5HPStwNw-HDrzny_MIPcQPJVLbO0e4A)()&irclickid=_tjuwqrwzyckfritzkk0sohzn0m2xjiqd0fym1xi000
+
+STEP 4:
+- Install the Build Tools for Visual Studio
+- The installer can be found here https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+STEP 5:
+- Install Visual Studio 2017, the free community edition is fine
+- The installer can be found here https://visualstudio.microsoft.com/downloads/
+- During installation, ensure "Desktop development with C++", "Python Development", and "Universal Windows Platform development" are selected
+- Restart the PC
+
+STEP 6:
+- Navigate to the directory where cl.exe was installed and ensure it was added to your PATH environment variables
+- The absolute path should resemble C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.21.27702\bin\Hostx64\x64 if the defaults were chosen
+
+STEP 7:
+- Using the Python Package installer pip, install numpy
+
+STEP 8:
+- Using the Python Package installer pip, install pycuda
+
+STEP 9:
+- The following code is a program that will test and ensure the setup was correct:
+    import pycuda.driver as cuda
+    import pycuda.autoinit
+    from pycuda.compiler import SourceModule
+    import numpy
+    a = numpy.random.randn(4,4)
+    a = a.astype(numpy.float32)
+    a_gpu = cuda.mem_alloc(a.nbytes)
+    cuda.memcpy_htod(a_gpu, a)
+    mod = SourceModule("""
+        __global__ void doublify(float *a)
+        {
+        int idx = threadIdx.x + threadIdx.y*4;
+        a[idx] *= 2;
+        }
+        """)
+    func = mod.get_function("doublify")
+    func(a_gpu, block=(4,4,1))
+    a_doubled = numpy.empty_like(a)
+    cuda.memcpy_dtoh(a_doubled, a_gpu)
+    print a_doubled
+    print a
+- The output should resemble something like this
+    [[ 0.51360393  1.40589952  2.25009012  3.02563429]
+     [-0.75841576 -1.18757617  2.72269917  3.12156057]
+     [ 0.28826082 -2.92448163  1.21624792  2.86353827]
+     [ 1.57651746  0.63500965  2.21570683 -0.44537592]]
+
+    [[ 0.25680196  0.70294976  1.12504506  1.51281714]
+     [-0.37920788 -0.59378809  1.36134958  1.56078029]
+     [ 0.14413041 -1.46224082  0.60812396  1.43176913]
+     [ 0.78825873  0.31750482  1.10785341 -0.22268796]]
+
+STEP 10:
+- Run the following command to execute the script
+    python trajectory_parser.py <input_data> <output_data>
+- An example execution is as follows
+    python trajectory_parser.py input.dat output.dat
+
