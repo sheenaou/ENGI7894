@@ -1,0 +1,39 @@
+############################################################
+#	Simulation 1: 
+#	An array of 4096 integers with 8 nodes
+############################################################
+Started time: 1564948584.3108447
+Finished time: 1564948584.3128114
+Time Elapsed: 0.001966714859008789
+
+############################################################
+#	Simulation 2: 
+#	An array of 8192 floating point numebrs with 8 nodes
+############################################################
+Started time: 1564948794.5646927
+Finished time: 1564948794.566688
+Time Elapsed: 0.0019953250885009766
+
+############################################################
+#	Simulation 3: 
+#	An array of 4096 integers with 4 nodes
+############################################################
+Started time: 1564949056.6759229
+Finished time: 1564949056.6779187
+Time Elapsed: 0.0019958019256591797
+
+############################################################
+#	Simulation 4: 
+#	An array of 8192 floating point numebrs with 4 nodes
+############################################################
+Started time: 1564949030.2250328
+Finished time: 1564949030.2280269
+Time Elapsed: 0.002994060516357422
+
+############################################################
+#	Discussion
+############################################################
+Based upon simulation results, you can see that dispersing the operation over a greater number of nodes decreases the amount of time required to complete the operation
+The time elapsed in simulation 4 is nearly double that of simulation 2. Thus, you are able to see the correlation between the number of nodes and the time to complete.
+However, you can see that the simulation time between 1 and 2, has a smaller time gap. Thus we can conclude that if the array contains a smaller amount of numbers, that the amount of nodes is negliable
+But when you increase the size of the array, the impact on time is more noticable. 
